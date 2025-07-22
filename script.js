@@ -297,29 +297,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let suggestionText = '';
         let creativeDisplay = '';
+        let adCopyDisplay = ''; // New variable for ad copy
 
         // Mock creatives for demonstration
-        const recommendedCreative1 = "TESTYOURAGENT-1-1.png"; 
+        const recommendedCreative1 = "TESTYOURAGENT-1-1.png";
         const recommendedCreative2 = "TESTYOURAGENT-1-1.png"; // Using the same image as requested
-        const adCopySuggestion1 = "Headline: Boost Engagement. Description: Try this new creative to capture attention!";
-        const adCopySuggestion2 = "Headline: Drive Conversions. Description: A fresh look for better results.";
+        const adCopySuggestion1 = "Headline: Test Your AI Agent. Description: Compete against the best in the Nanite Olympics!";
+        const adCopySuggestion2 = "Headline: Prove Your Skills. Description: Join the waitlist for the ultimate AI agent competition.";
 
         if (lowCTRAd) {
-            suggestionText += `AI suggests A/B testing new creatives for "${lowCTRAd['Ad set name']}" (Low CTR: ${(lowCTRAd['CTR (link click-through rate)'] * 100).toFixed(2)}%). This could significantly improve engagement.\n\nRecommended Creative 1:`;
+            suggestionText += `AI suggests A/B testing new creatives for "${lowCTRAd['Ad set name']}" (Low CTR: ${(lowCTRAd['CTR (link click-through rate)'] * 100).toFixed(2)}%). This could significantly improve engagement.`;
             creativeDisplay += `<img src="/NaniteSimu/.gemini/Nanite-Ad-Creatives/${recommendedCreative1}" alt="Recommended Creative 1" style="width: 150px; height: auto; margin-top: 10px; margin-right: 10px;">`;
-            suggestionText += `
-Recommended Creative 2:`;
             creativeDisplay += `<img src="/NaniteSimu/.gemini/Nanite-Ad-Creatives/${recommendedCreative2}" alt="Recommended Creative 2" style="width: 150px; height: auto; margin-top: 10px;">`;
-            suggestionText += `\n\nRecommended Ad Copy:\n- ${adCopySuggestion1}\n- ${adCopySuggestion2}`;
+            adCopyDisplay += `
+                <p><strong>Suggested Ad Copy 1:</strong><br>${adCopySuggestion1}</p>
+                <p><strong>Suggested Ad Copy 2:</strong><br>${adCopySuggestion2}</p>
+            `;
         }
         if (highCTRAd) {
-            if (suggestionText !== '') suggestionText += '\n\n';
+            if (suggestionText !== '') suggestionText += '<br><br>'; // Use <br> for HTML
             suggestionText += `AI recommends generating similar creative variations based on the success of "${highCTRAd['Ad set name']}" (High CTR: ${(highCTRAd['CTR (link click-through rate)'] * 100).toFixed(2)}%).`;
         }
 
         campaignOptimizationSuggestionDiv.innerHTML = `
-            <p>${suggestionText.replace(/\n/g, '<br>')}</p>
+            <p>${suggestionText}</p>
             ${creativeDisplay}
+            ${adCopyDisplay}
             <div class="ai-suggestion-buttons">
                 <button class="accept" id="apply-creative-optimization">Accept</button>
                 <button class="reject" id="reject-creative-optimization">Reject</button>
