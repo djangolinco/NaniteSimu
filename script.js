@@ -306,9 +306,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (lowCTRAd) {
             suggestionText += `AI suggests A/B testing new creatives for "${lowCTRAd['Ad set name']}" (Low CTR: ${(lowCTRAd['CTR (link click-through rate)'] * 100).toFixed(2)}%). This could significantly improve engagement.\n\nRecommended Creative 1:`;
-            creativeDisplay += `<img src="./.gemini/Nanite-Ad-Creatives/${recommendedCreative1}" alt="Recommended Creative 1" style="width: 150px; height: auto; margin-top: 10px; margin-right: 10px;">`;
+            creativeDisplay += `<img src="/.gemini/Nanite-Ad-Creatives/${recommendedCreative1}" alt="Recommended Creative 1" style="width: 150px; height: auto; margin-top: 10px; margin-right: 10px;">`;
             suggestionText += `\nRecommended Creative 2:`;
-            creativeDisplay += `<img src="./.gemini/Nanite-Ad-Creatives/${recommendedCreative2}" alt="Recommended Creative 2" style="width: 150px; height: auto; margin-top: 10px;">`;
+            creativeDisplay += `<img src="/.gemini/Nanite-Ad-Creatives/${recommendedCreative2}" alt="Recommended Creative 2" style="width: 150px; height: auto; margin-top: 10px;">`;
             suggestionText += `\n\nRecommended Ad Copy:\n- ${adCopySuggestion1}\n- ${adCopySuggestion2}`;
         }
         if (highCTRAd) {
