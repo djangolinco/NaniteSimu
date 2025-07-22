@@ -342,93 +342,42 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     });
 
-    // Removed aiBidStrategyBtn
+    // Creative Studio Functionality
+    const aiAdImage = document.getElementById('ai-ad-image');
+    const primaryText = document.getElementById('primary-text');
+    const headline = document.getElementById('headline');
+    const cta = document.getElementById('cta');
+    const adUrl = document.getElementById('ad-url');
+    const generateAiCopyBtn = document.getElementById('generate-ai-copy');
 
-    runAnalysisBtn.addEventListener('click', () => {
-        let analysisText = 'AI-Powered Ad Performance Analysis:\n\n';
+    // Set initial image and content
+    aiAdImage.src = '.gemini/Nanite-Ad-Creatives/TESTYOURAGENT-1-1.png';
+    primaryText.value = "Unleash your AI's potential! Compete in the Nanite Olympics and prove you're the best. Join a community of elite AI builders and win big. Sign up for early access now!";
+    headline.value = "Test Your AI Agent. Win Big.";
+    cta.value = "Join the Waitlist";
+    adUrl.value = "https://nanite.org/?utm_source=x&utm_medium=paid_social&utm_campaign=waitlist_leadgen_july&utm_content=carousel_cheatcode";
 
-        const totalSpent = adData.reduce((sum, ad) => sum + ad['Amount spent (USD)'], 0);
-        const totalResults = adData.reduce((sum, ad) => sum + (ad['Cost per results'] !== 'N/A' ? ad['Amount spent (USD)'] / ad['Cost per results'] : 0), 0);
-        const overallCPR = totalResults > 0 ? totalSpent / totalResults : 0;
+    generateAiCopyBtn.addEventListener('click', () => {
+        // Simulate AI generating new copy
+        const newPrimaryTexts = [
+            "Ready to dominate the AI world? The Nanite Olympics is calling! Showcase your agent-building skills, connect with top talent, and earn recognition. Don't miss out – secure your spot today!",
+            "Your AI agent, your legacy. Enter the Nanite Olympics, the ultimate proving ground for AI innovators. Build, compete, and conquer. Early access is limited – sign up now!",
+            "Transform your AI ideas into reality. The Nanite Olympics offers a unique platform to test, refine, and celebrate your AI creations. Join our exclusive community and start your journey to victory!"
+        ];
+        const newHeadlines = [
+            "Prove Your AI Prowess.",
+            "The Future of AI Competition.",
+            "Build. Compete. Conquer."
+        ];
+        const newCtas = [
+            "Sign Up Now",
+            "Get Early Access",
+            "Learn More"
+        ];
 
-        analysisText += `Overall Performance:\n- Total Spent: $${totalSpent.toFixed(2)}\n- Overall CPR: $${overallCPR.toFixed(2)}\n\n`;
-
-        const bestPerforming = adData.filter(ad => ad['Cost per results'] < 5 && ad['Ad set delivery'] === 'Active');
-        if (bestPerforming.length > 0) {
-            analysisText += 'Best Performing Ad Sets (CPR < $5):\n';
-            bestPerforming.forEach(ad => analysisText += `- ${ad['Ad set name']} (CPR: $${ad['Cost per results'].toFixed(2)})\n`);
-        }
-
-        const worstPerforming = adData.filter(ad => ad['Cost per results'] > 8 && ad['Ad set delivery'] === 'Active');
-        if (worstPerforming.length > 0) {
-            analysisText += '\nWorst Performing Ad Sets (CPR > $8):\n';
-            worstPerforming.forEach(ad => analysisText += `- ${ad['Ad set name']} (CPR: $${ad['Cost per results'].toFixed(2)})\n`);
-        }
-
-        analysisText += '\nRecommendations:\n';
-        if (worstPerforming.length > 0) {
-            analysisText += '- Consider pausing or optimizing creatives/audiences for worst-performing ad sets.\n';
-        }
-        if (bestPerforming.length > 0) {
-            analysisText += '- Scale budget or create lookalike audiences for best-performing ad sets.\n';
-        }
-        if (adData.some(ad => ad['Ad set delivery'] === 'Killed')) {
-            analysisText += '- Review killed ad sets for potential insights or re-activation if conditions changes.\n';
-        }
-
-        analysisResultsDiv.innerHTML = `<p>${analysisText.replace(/\n/g, '<br>')}</p>`;
-    });
-
-    runTrendsAnalysisBtn.addEventListener('click', () => {
-        let trendsAnalysisText = 'AI-Powered Performance Trends Analysis:\n\n';
-
-        // Simulate trends (even with static data)
-        const improvingAds = adData.filter(ad => ad['Cost per results'] < 5 && ad['CTR (link click-through rate)'] > 0.02);
-        const decliningAds = adData.filter(ad => ad['Cost per results'] > 7 && ad['CTR (link click-through rate)'] < 0.015);
-
-        if (improvingAds.length > 0) {
-            trendsAnalysisText += 'Improving Trends (Low CPR, High CTR):\n';
-            improvingAds.forEach(ad => trendsAnalysisText += `- ${ad['Ad set name']} (CPR: $${ad['Cost per results'].toFixed(2)}, CTR: ${(ad['CTR (link click-through rate'] * 100).toFixed(2)}%)\n`);
-            trendsAnalysisText += '  Recommendation: Allocate more budget and explore similar audiences.\n\n';
-        }
-
-        if (decliningAds.length > 0) {
-            trendsAnalysisText += 'Declining Trends (High CPR, Low CTR):\n';
-            decliningAds.forEach(ad => trendsAnalysisText += `- ${ad['Ad set name']} (CPR: $${ad['Cost per results'].toFixed(2)}, CTR: ${(ad['CTR (link click-through rate'] * 100).toFixed(2)}%)\n`);
-            trendsAnalysisText += '  Recommendation: Review creative and audience targeting, consider pausing if trends continue.\n\n';
-        }
-
-        if (improvingAds.length === 0 && decliningAds.length === 0) {
-            trendsAnalysisText += 'No significant trends detected. All active ad sets are performing consistently.';
-        }
-
-        trendsAnalysisResultsDiv.innerHTML = `<p>${trendsAnalysisText.replace(/\n/g, '<br>')}</p>`;
-    });
-
-    // Handle Create Ad Form Submission
-    createAdForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const campaignName = document.getElementById('campaign-name').value;
-        const audience = document.getElementById('audience').value;
-        const adCreative = document.getElementById('ad-creative').value;
-        const budget = document.getElementById('budget').value;
-
-        alert(`Simulating new campaign launch:\nCampaign Name: ${campaignName}\nAudience: ${audience}\nCreative: ${adCreative}\nDaily Budget: $${budget}\n\n(This would typically trigger an API call to Meta Ads Management API)`);
-
-        // Here you would typically make an API call to Meta Ads Management API
-        // For this simulator, we just show an alert and clear the form
-        createAdForm.reset();
-    });
-
-    // Reset Simulator
-    resetSimulatorBtn.addEventListener('click', () => {
-        adData = JSON.parse(JSON.stringify(initialAdData)); // Reset to initial data
-        populateTable();
-        newCampaignSuggestionDiv.innerHTML = ''; // Clear new campaign suggestion
-        campaignOptimizationSuggestionDiv.innerHTML = ''; // Clear optimization suggestion
-        analysisResultsDiv.innerHTML = ''; // Clear analysis results
-        trendsAnalysisResultsDiv.innerHTML = ''; // Clear trends analysis results
-        createAdForm.reset(); // Reset the form
-        alert('Simulator has been reset!');
+        primaryText.value = newPrimaryTexts[Math.floor(Math.random() * newPrimaryTexts.length)];
+        headline.value = newHeadlines[Math.floor(Math.random() * newHeadlines.length)];
+        cta.value = newCtas[Math.floor(Math.random() * newCtas.length)];
+        alert('New AI-generated copy has been loaded!');
     });
 });

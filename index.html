@@ -39,16 +39,6 @@
                 <tbody>
                 </tbody>
             </table>
-            <div class="ad-analysis-section">
-                <h3>Ad Performance Analysis</h3>
-                <button id="run-analysis-btn">Run AI-Powered Analysis</button>
-                <div id="analysis-results"></div>
-            </div>
-            <div class="ad-analysis-section">
-                <h3>Performance Trends Analysis</h3>
-                <button id="run-trends-analysis-btn">Analyze Performance Trends</button>
-                <div id="trends-analysis-results"></div>
-            </div>
         </div>
         <div class="section">
             <h2><pre>ads_management</pre> Demo: Create New Campaign</h2>
@@ -73,11 +63,6 @@
                 
                 <button type="submit">Launch Campaign</button>
             </form>
-            <div class="ai-new-campaign-suggestion">
-                <h3>AI-Driven Campaign Strategy</h3>
-                <button id="ai-suggest-new-campaign">Get AI Recommendation</button>
-                <div id="new-campaign-suggestion"></div>
-            </div>
         </div>
 
         <div class="section">
@@ -90,15 +75,48 @@
         </div>
 
         <div class="section" id="creative-studio-section">
-            <h2><pre>ads_management</pre> Demo: Creative Studio</h2>
-            <button id="generate-creative-suggestion">Generate AI Creative Suggestion</button>
-            <div id="ai-creative-suggestion-display">
-                <!-- AI creative suggestion will be displayed here -->
+            <h2><pre>ads_management</pre> Demo: AI Creative Studio</h2>
+            <div class="recommendation-card">
+                <h3>Recommendation 1: Target "AI Enthusiasts"</h3>
+                <div class="ai-rationale">
+                    <p><strong>AI Rationale:</strong> This creative uses a bold, direct challenge: "Prove You're The Best In AI." It's designed to capture the attention of highly competitive individuals within the "AI Enthusiasts" and "Prompt Engineers" audiences. The retro, pixelated aesthetic taps into a nostalgic gaming culture, suggesting that building AI can be a fun, high-stakes game. The primary hook is pure status and skill validation. We hypothesize this will attract top-tier talent who are motivated by prestige, leading to high-quality waitlist signups.</p>
+                </div>
+                <div id="creative-studio-content">
+                    <div class="creative-display">
+                        <h4>Ad Creative Preview</h4>
+                        <div class="creative-image-wrapper">
+                            <img src="creatives/prove-you-the-best-9-16.png" alt="Ad Creative" class="ai-ad-image">
+                            <button class="upload-btn">Upload New Creative</button>
+                        </div>
+                    </div>
+                    <div class="creative-text-fields">
+                        <h4>Ad Copy</h4>
+                        <label for="primary-text">Primary Text:</label>
+                        <textarea id="primary-text" rows="5">Think you're one of the best AI builders out there? It's time to prove it. The Nanite Olympics is where top creators battle for recognition, prizes, and the ultimate bragging rights. Earn your Nanite Score and show the world what your agent can do.</textarea>
+
+                        <label for="headline">Headline:</label>
+                        <input type="text" id="headline" value="Prove You're The Best In AI">
+
+                        <label for="cta">Call to Action (CTA):</label>
+                        <select id="cta" name="cta">
+                            <option value="LEARN_MORE">Earn Your Nanite Score</option>
+                            <option value="SIGN_UP">Sign Up</option>
+                            <option value="JOIN_WAITLIST">Join Waitlist</option>
+                        </select>
+                        
+                        <div class="recommendation-buttons">
+                            <button id="publish-ad-btn" class="accept">Accept & Publish</button>
+                            <button id="reject-ad-btn" class="reject">Reject Suggestion</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-recommendation-wrapper">
+                <button id="next-recommendation-btn">View Next Recommendation</button>
             </div>
         </div>
     </div>
 
-    <script src="script.js
-"></script>
+    <script src="script.js"></script>
 </body>
 </html>
