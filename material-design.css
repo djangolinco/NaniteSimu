@@ -84,6 +84,17 @@ body {
     box-shadow: var(--md-shadow-2);
 }
 
+.md-button--accept {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: var(--md-shadow-1);
+}
+
+.md-button--accept:hover {
+    background-color: #45a049;
+    box-shadow: var(--md-shadow-2);
+}
+
 .md-button--text {
     background-color: transparent;
     color: var(--md-primary-color);
@@ -102,6 +113,11 @@ body {
     padding: 16px;
     text-align: left;
     border-bottom: 1px solid var(--md-divider-color);
+    vertical-align: middle;
+}
+
+.md-table tbody tr:hover {
+    background-color: #f9f9f9;
 }
 
 .md-table th {
@@ -109,6 +125,32 @@ body {
     color: var(--md-text-secondary-color);
     background-color: #F5F5F5;
 }
+
+.md-button--table {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 13px;
+}
+
+.md-button--table-accept {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+}
+
+.md-button--table-accept:hover {
+    background-color: #C8E6C9;
+}
+
+.md-button--table-reject {
+    background-color: #FFEBEE;
+    color: #C62828;
+}
+
+.md-button--table-reject:hover {
+    background-color: #FFCDD2;
+}
+
 
 .md-textfield {
     position: relative;

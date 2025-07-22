@@ -1,5 +1,18 @@
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const generateCampaignBtn = document.getElementById('generate-campaign-btn');
+    const campaignBriefContainer = document.getElementById('campaign-brief-container');
+    const generatedCampaignContainer = document.getElementById('generated-campaign-container');
+
+    generateCampaignBtn.addEventListener('click', () => {
+        campaignBriefContainer.style.display = 'none';
+        generatedCampaignContainer.style.display = 'block';
+    });
+
+    // ... (rest of the script.js)
+});
+
 const initialAdData = [
     {
         "Ad set name": "AI Contest Early Adopters | T1 | 18-28 | 2025_07",
@@ -188,20 +201,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const approveButton = document.createElement('button');
                 approveButton.textContent = 'Accept';
-                approveButton.classList.add('accept');
+                approveButton.classList.add('md-button', 'md-button--table', 'md-button--table-accept');
                 approveButton.onclick = () => {
                     aiSuggestion.effect();
-                    alert(`Action approved for "${ad['Ad set name']}". Status changed to Processing.`);
                     populateTable();
                 };
                 buttonContainer.appendChild(approveButton);
 
                 const rejectButton = document.createElement('button');
                 rejectButton.textContent = 'Reject';
-                rejectButton.classList.add('reject');
+                rejectButton.classList.add('md-button', 'md-button--table', 'md-button--table-reject');
                 rejectButton.onclick = () => {
-                    alert(`Action rejected for "${ad['Ad set name']}".`);
-                    populateTable(); // Re-populate to clear buttons if needed
+                    // Maybe add a visual indicator that it was rejected
+                    populateTable(); 
                 };
                 buttonContainer.appendChild(rejectButton);
                 actionsCell.appendChild(buttonContainer);

@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <button id="reset-simulator" class="md-button md-button--secondary">Reset Simulator</button>
     <div class="container">
         <div class="header">
             <img src="EmailHeader1.png" alt="Nanite Header" class="header-image">
@@ -19,7 +20,6 @@
                 <img src="nanite-logo.png" alt="Nanite Logo" class="logo-small">
                 <h1>Nanite Ad Simulator</h1>
             </div>
-            <button id="reset-simulator" class="md-button md-button--secondary">Reset Simulator</button>
         </div>
         <div class="section md-card">
             <h2><pre>ads_read</pre> Demo: Ad Performance</h2>
@@ -43,39 +43,43 @@
                 </tbody>
             </table>
         </div>
-        <div class="section md-card">
-            <h2><pre>ads_management</pre> Demo: Create New Campaign</h2>
-            <form id="create-ad-form">
-                <div class="md-textfield">
-                    <input type="text" id="campaign-name" name="campaign-name" required placeholder="Campaign Name">
+        <div class="section md-card" id="campaign-strategist-section">
+            <h2><pre>ads_management</pre> Demo: AI Campaign Strategist</h2>
+            <div id="campaign-brief-container">
+                <h3>AI-Generated Campaign Brief</h3>
+                <div class="ai-rationale">
+                    <p><strong>Brief:</strong> Launch a top-of-funnel campaign to test a new, highly competitive angle targeting "Prompt Engineers." The primary hook will be skill validation, using direct, challenging language. The goal is to acquire high-intent leads for the Nanite Olympics waitlist at a CPL below $2.50.</p>
                 </div>
-                <div class="md-textfield">
-                    <select id="audience" name="audience" required>
-                        <option value="" disabled selected>Select Audience</option>
-                        <option value="AI Enthusiasts">AI Enthusiasts</option>
-                        <option value="Prompt Engineers">Prompt Engineers</option>
-                        <option value="Indie Hackers">Indie Hackers</option>
-                    </select>
-                </div>
-                <div class="md-textfield">
-                    <select id="ad-creative" name="ad-creative" required>
-                         <option value="" disabled selected>Select Creative</option>
-                    </select>
-                </div>
-                <div class="md-textfield">
-                    <input type="number" id="budget" name="budget" required placeholder="Daily Budget (USD)">
-                </div>
-                <button type="submit" class="md-button md-button--primary">Launch Campaign</button>
-            </form>
-        </div>
-
-        <div class="section">
-            <h2><pre>ads_management</pre> Demo: Campaign Optimization</h2>
-            <div class="campaign-optimization-actions">
-                <button id="ai-audience-refinement">AI Audience Refinement</button>
-                <button id="ai-creative-optimization">AI Creative Optimization</button>
+                <button id="generate-campaign-btn" class="md-button md-button--primary">Generate Campaign Structure</button>
             </div>
-            <div id="campaign-optimization-suggestion"></div>
+            <div id="generated-campaign-container" style="display: none;">
+                <h3>Generated Campaign Structure</h3>
+                <table id="campaign-structure-table" class="md-table">
+                    <thead>
+                        <tr>
+                            <th>Ad Set Name</th>
+                            <th>Audience</th>
+                            <th>Creative Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Prompt Engineers | US/CA | 25-45 | Skill Challenge</td>
+                            <td>Prompt Engineers</td>
+                            <td>Direct challenge creative ("Prove Your Skill")</td>
+                        </tr>
+                        <tr>
+                            <td>AI Developers | Lookalike (1%) | Top Performers</td>
+                            <td>Lookalike (US)</td>
+                            <td>Prestige & recognition creative ("Join the Elite")</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="campaign-actions">
+                    <button id="launch-campaign-btn" class="md-button md-button--accept">🚀 Launch Campaign</button>
+                    <button id="regenerate-brief-btn" class="md-button">🔄 Generate New Brief</button>
+                </div>
+            </div>
         </div>
 
         <div class="section md-card" id="creative-studio-section">
@@ -89,7 +93,7 @@
                     <div class="creative-display">
                         <h4>Ad Creative Preview</h4>
                         <div class="creative-image-wrapper">
-                            <img src="creatives/prove-you-the-best-9-16.png" alt="Ad Creative" class="ai-ad-image">
+                            <img src="creatives/TESTYOURAGENT-1-1.png" alt="Ad Creative" class="ai-ad-image">
                             <button class="upload-btn md-button--text">Upload New Creative</button>
                         </div>
                     </div>
@@ -109,8 +113,8 @@
                             </select>
                         </div>
                         <div class="recommendation-buttons">
-                            <button id="publish-ad-btn" class="md-button md-button--primary">Accept & Publish</button>
-                            <button id="reject-ad-btn" class="md-button">Reject Suggestion</button>
+                            <button id="publish-ad-btn" class="md-button md-button--accept"><span>👍</span> Accept & Publish</button>
+                            <button id="reject-ad-btn" class="md-button"><span>👎</span> Reject Suggestion</button>
                         </div>
                     </div>
                 </div>
