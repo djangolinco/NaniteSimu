@@ -300,15 +300,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mock creatives for demonstration
         const recommendedCreative1 = "TESTYOURAGENT-1-1.png"; 
-        const recommendedCreative2 = "CanYourAgentWin.png";
-        const adCopySuggestion1 = "Headline: Master AI Agent Building. Description: Compete, learn, and earn in the Nanite Olympics!";
-        const adCopySuggestion2 = "Headline: Prove Your AI Skills. Description: Join the Nanite Olympics and dominate the leaderboard.";
+        const recommendedCreative2 = "TESTYOURAGENT-1-1.png"; // Using the same image as requested
+        const adCopySuggestion1 = "Headline: Boost Engagement. Description: Try this new creative to capture attention!";
+        const adCopySuggestion2 = "Headline: Drive Conversions. Description: A fresh look for better results.";
 
         if (lowCTRAd) {
             suggestionText += `AI suggests A/B testing new creatives for "${lowCTRAd['Ad set name']}" (Low CTR: ${(lowCTRAd['CTR (link click-through rate)'] * 100).toFixed(2)}%). This could significantly improve engagement.\n\nRecommended Creative 1:`;
-            creativeDisplay += `<img src="/.gemini/Nanite-Ad-Creatives/${recommendedCreative1}" alt="Recommended Creative 1" style="width: 150px; height: auto; margin-top: 10px; margin-right: 10px;">`;
-            suggestionText += `\nRecommended Creative 2:`;
-            creativeDisplay += `<img src="/.gemini/Nanite-Ad-Creatives/${recommendedCreative2}" alt="Recommended Creative 2" style="width: 150px; height: auto; margin-top: 10px;">`;
+            creativeDisplay += `<img src="/NaniteSimu/.gemini/Nanite-Ad-Creatives/${recommendedCreative1}" alt="Recommended Creative 1" style="width: 150px; height: auto; margin-top: 10px; margin-right: 10px;">`;
+            suggestionText += `
+Recommended Creative 2:`;
+            creativeDisplay += `<img src="/NaniteSimu/.gemini/Nanite-Ad-Creatives/${recommendedCreative2}" alt="Recommended Creative 2" style="width: 150px; height: auto; margin-top: 10px;">`;
             suggestionText += `\n\nRecommended Ad Copy:\n- ${adCopySuggestion1}\n- ${adCopySuggestion2}`;
         }
         if (highCTRAd) {
