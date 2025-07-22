@@ -1,0 +1,99 @@
+
+{
+  "campaigns": [
+    {
+      "id": "12020202020202020",
+      "name": "Nanite Olympics Weightless, Lead Gen, July",
+      "objective": "LEAD_GENERATION",
+      "status": "ACTIVE",
+      "daily_budget": "100.00",
+      "lifetime_budget": "1000.00",
+      "ad_sets": [
+        {
+          "id": "23850000000000001",
+          "name": "Indie Hackers and Startup Enthusiasts",
+          "status": "ACTIVE",
+          "daily_budget": "33.33",
+          "targeting": "Indie Hackers, Startup Enthusiasts",
+          "insights": {
+            "spend": "250.50",
+            "impressions": 55000,
+            "clicks": 2800,
+            "leads": 260,
+            "cost_per_lead": "0.96"
+          },
+          "ads": [
+            {
+              "id": "34850000000000001",
+              "name": "Nanite Creative A",
+              "status": "ACTIVE",
+              "creative_id": "creative_1.jpg"
+            },
+            {
+              "id": "34850000000000002",
+              "name": "Nanite Creative B",
+              "status": "ACTIVE",
+              "creative_id": "creative_2.png"
+            }
+          ]
+        },
+        {
+          "id": "23850000000000002",
+          "name": "Hackathon GitHub Enthusiasts",
+          "status": "ACTIVE",
+          "daily_budget": "33.33",
+          "targeting": "Hackathons, GitHub",
+          "insights": {
+            "spend": "310.00",
+            "impressions": 68000,
+            "clicks": 3100,
+            "leads": 255,
+            "cost_per_lead": "1.22"
+          },
+          "ads": [
+            {
+              "id": "34850000000000003",
+              "name": "Nanite Creative A",
+              "status": "ACTIVE",
+              "creative_id": "creative_1.jpg"
+            },
+            {
+              "id": "34850000000000004",
+              "name": "Nanite Creative B",
+              "status": "ACTIVE",
+              "creative_id": "creative_2.png"
+            }
+          ]
+        },
+        {
+          "id": "23850000000000003",
+          "name": "AI Builders and Hackathon Competitors",
+          "status": "ACTIVE",
+          "daily_budget": "33.33",
+          "targeting": "AI, Machine Learning, Hackathon Competitors",
+          "insights": {
+            "spend": "285.75",
+            "impressions": 61000,
+            "clicks": 3500,
+            "leads": 310,
+            "cost_per_lead": "0.92"
+          },
+          "ads": [
+            {
+              "id": "34850000000000005",
+              "name": "Nanite Creative A",
+              "status": "ACTIVE",
+              "creative_id": "creative_1.jpg"
+            },
+            {
+              "id": "34850000000000006",
+              "name": "Nanite Creative B",
+              "status": "ACTIVE",
+              "creative_id": "creative_2.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

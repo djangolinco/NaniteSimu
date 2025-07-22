@@ -1,0 +1,217 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    position: relative; /* For positioning the reset button */
+}
+
+.header-image {
+    width: 100%; 
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.main-title-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-small {
+    height: 30px; /* Adjust size as needed */
+}
+
+h1 {
+    color: #222;
+    margin: 0;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.reset-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f44336; /* Red for reset */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.reset-button:hover {
+    background-color: #da190b;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    color: #444;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+pre {
+    display: inline;
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #eee;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #555;
+}
+
+form {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="text"], input[type="number"], select {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+}
+
+.ai-suggestion-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between rationale and buttons */
+}
+
+.ai-suggestion-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.ai-suggestion-buttons button {
+    flex: 1; /* Distribute space evenly */
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.ai-suggestion-buttons button.accept {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.ai-suggestion-buttons button.accept:hover {
+    background-color: #45a049;
+}
+
+.ai-suggestion-buttons button.reject {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: 1px solid #f44336;
+}
+
+.ai-suggestion-buttons button.reject:hover {
+    background-color: #da190b;
+}
+
+/* General button styling (for form buttons) */
+button {
+    background-color: #333; /* Dark grey/black */
+    color: white;
+    border: 1px solid #333;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.ai-new-campaign-suggestion {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.ai-new-campaign-suggestion h3 {
+    color: #444;
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.ai-new-campaign-suggestion p {
+    background-color: #eef;
+    border-left: 4px solid #5a67d8;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #333;
+}
