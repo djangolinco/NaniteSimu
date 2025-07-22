@@ -1,0 +1,132 @@
+/* --- Material Design Core --- */
+:root {
+    --md-primary-color: #6200EE;
+    --md-primary-variant-color: #3700B3;
+    --md-secondary-color: #03DAC6;
+    --md-background-color: #F5F5F5;
+    --md-surface-color: #FFFFFF;
+    --md-error-color: #B00020;
+    --md-on-primary-color: #FFFFFF;
+    --md-on-secondary-color: #000000;
+    --md-on-background-color: #000000;
+    --md-on-surface-color: #000000;
+    --md-on-error-color: #FFFFFF;
+    --md-text-primary-color: #212121;
+    --md-text-secondary-color: #757575;
+    --md-divider-color: #E0E0E0;
+    --md-shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --md-shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --md-shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--md-background-color);
+    color: var(--md-text-primary-color);
+}
+
+/* --- Material Design Components --- */
+.md-card {
+    background-color: var(--md-surface-color);
+    border-radius: 8px;
+    box-shadow: var(--md-shadow-1);
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.md-card:hover {
+    box-shadow: var(--md-shadow-2);
+}
+
+.md-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    height: 36px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.md-button--primary {
+    background-color: var(--md-primary-color);
+    color: var(--md-on-primary-color);
+    box-shadow: var(--md-shadow-1);
+}
+
+.md-button--primary:hover {
+    background-color: var(--md-primary-variant-color);
+    box-shadow: var(--md-shadow-2);
+}
+
+.md-button--secondary {
+    background-color: var(--md-secondary-color);
+    color: var(--md-on-secondary-color);
+    box-shadow: var(--md-shadow-1);
+}
+
+.md-button--secondary:hover {
+    background-color: #018786;
+    box-shadow: var(--md-shadow-2);
+}
+
+.md-button--text {
+    background-color: transparent;
+    color: var(--md-primary-color);
+}
+
+.md-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--md-surface-color);
+    box-shadow: var(--md-shadow-1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.md-table th, .md-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--md-divider-color);
+}
+
+.md-table th {
+    font-weight: 500;
+    color: var(--md-text-secondary-color);
+    background-color: #F5F5F5;
+}
+
+.md-textfield {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.md-textfield input, .md-textfield textarea, .md-textfield select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--md-divider-color);
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: var(--md-background-color);
+    transition: border-color 0.3s;
+}
+
+.md-textfield input:focus, .md-textfield textarea:focus, .md-textfield select:focus {
+    border-color: var(--md-primary-color);
+    outline: none;
+}

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nanite Ad Simulator</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="material-design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -16,11 +19,11 @@
                 <img src="nanite-logo.png" alt="Nanite Logo" class="logo-small">
                 <h1>Nanite Ad Simulator</h1>
             </div>
-            <button id="reset-simulator" class="reset-button">Reset Simulator</button>
+            <button id="reset-simulator" class="md-button md-button--secondary">Reset Simulator</button>
         </div>
-        <div class="section">
+        <div class="section md-card">
             <h2><pre>ads_read</pre> Demo: Ad Performance</h2>
-            <table id="ads-table">
+            <table id="ads-table" class="md-table">
                 <thead>
                     <tr>
                         <th>Ad Set Name</th>
@@ -40,28 +43,29 @@
                 </tbody>
             </table>
         </div>
-        <div class="section">
+        <div class="section md-card">
             <h2><pre>ads_management</pre> Demo: Create New Campaign</h2>
             <form id="create-ad-form">
-                <label for="campaign-name">Campaign Name:</label>
-                <input type="text" id="campaign-name" name="campaign-name" required>
-
-                <label for="audience">Audience:</label>
-                <select id="audience" name="audience" required>
-                    <option value="">Select Audience</option>
-                    <option value="AI Enthusiasts">AI Enthusiasts</option>
-                    <option value="Prompt Engineers">Prompt Engineers</option>
-                    <option value="Indie Hackers">Indie Hackers</option>
-                </select>
-
-                <label for="ad-creative">Creative:</label>
-                <select id="ad-creative" name="ad-creative" required>
-                </select>
-
-                <label for="budget">Daily Budget (USD):</label>
-                <input type="number" id="budget" name="budget" required>
-                
-                <button type="submit">Launch Campaign</button>
+                <div class="md-textfield">
+                    <input type="text" id="campaign-name" name="campaign-name" required placeholder="Campaign Name">
+                </div>
+                <div class="md-textfield">
+                    <select id="audience" name="audience" required>
+                        <option value="" disabled selected>Select Audience</option>
+                        <option value="AI Enthusiasts">AI Enthusiasts</option>
+                        <option value="Prompt Engineers">Prompt Engineers</option>
+                        <option value="Indie Hackers">Indie Hackers</option>
+                    </select>
+                </div>
+                <div class="md-textfield">
+                    <select id="ad-creative" name="ad-creative" required>
+                         <option value="" disabled selected>Select Creative</option>
+                    </select>
+                </div>
+                <div class="md-textfield">
+                    <input type="number" id="budget" name="budget" required placeholder="Daily Budget (USD)">
+                </div>
+                <button type="submit" class="md-button md-button--primary">Launch Campaign</button>
             </form>
         </div>
 
@@ -74,7 +78,7 @@
             <div id="campaign-optimization-suggestion"></div>
         </div>
 
-        <div class="section" id="creative-studio-section">
+        <div class="section md-card" id="creative-studio-section">
             <h2><pre>ads_management</pre> Demo: AI Creative Studio</h2>
             <div class="recommendation-card">
                 <h3>Recommendation 1: Target "AI Enthusiasts"</h3>
@@ -86,33 +90,33 @@
                         <h4>Ad Creative Preview</h4>
                         <div class="creative-image-wrapper">
                             <img src="creatives/prove-you-the-best-9-16.png" alt="Ad Creative" class="ai-ad-image">
-                            <button class="upload-btn">Upload New Creative</button>
+                            <button class="upload-btn md-button--text">Upload New Creative</button>
                         </div>
                     </div>
                     <div class="creative-text-fields">
                         <h4>Ad Copy</h4>
-                        <label for="primary-text">Primary Text:</label>
-                        <textarea id="primary-text" rows="5">Think you're one of the best AI builders out there? It's time to prove it. The Nanite Olympics is where top creators battle for recognition, prizes, and the ultimate bragging rights. Earn your Nanite Score and show the world what your agent can do.</textarea>
-
-                        <label for="headline">Headline:</label>
-                        <input type="text" id="headline" value="Prove You're The Best In AI">
-
-                        <label for="cta">Call to Action (CTA):</label>
-                        <select id="cta" name="cta">
-                            <option value="LEARN_MORE">Earn Your Nanite Score</option>
-                            <option value="SIGN_UP">Sign Up</option>
-                            <option value="JOIN_WAITLIST">Join Waitlist</option>
-                        </select>
-                        
+                        <div class="md-textfield">
+                            <textarea id="primary-text" rows="5">Think you're one of the best AI builders out there? It's time to prove it. The Nanite Olympics is where top creators battle for recognition, prizes, and the ultimate bragging rights. Earn your Nanite Score and show the world what your agent can do.</textarea>
+                        </div>
+                        <div class="md-textfield">
+                            <input type="text" id="headline" value="Prove You're The Best In AI">
+                        </div>
+                        <div class="md-textfield">
+                            <select id="cta" name="cta">
+                                <option value="LEARN_MORE">Earn Your Nanite Score</option>
+                                <option value="SIGN_UP">Sign Up</option>
+                                <option value="JOIN_WAITLIST">Join Waitlist</option>
+                            </select>
+                        </div>
                         <div class="recommendation-buttons">
-                            <button id="publish-ad-btn" class="accept">Accept & Publish</button>
-                            <button id="reject-ad-btn" class="reject">Reject Suggestion</button>
+                            <button id="publish-ad-btn" class="md-button md-button--primary">Accept & Publish</button>
+                            <button id="reject-ad-btn" class="md-button">Reject Suggestion</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="next-recommendation-wrapper">
-                <button id="next-recommendation-btn">View Next Recommendation</button>
+                <button id="next-recommendation-btn" class="md-button">View Next Recommendation</button>
             </div>
         </div>
     </div>
